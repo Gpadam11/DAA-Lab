@@ -10,19 +10,8 @@ void find2ndSmallestAndLargest(int arr[], int n) {
     int smallest = arr[0], secondSmallest = arr[1];
     int largest = arr[0], secondLargest = arr[1];
 
-    if (secondSmallest < smallest) {
-        int temp = smallest;
-        smallest = secondSmallest;
-        secondSmallest = temp;
-    }
-
-    if (secondLargest > largest) {
-        int temp = largest;
-        largest = secondLargest;
-        secondLargest = temp;
-    }
-
-    for (int i = 2; i < n; i++) {
+    for (int i = 1; i < n; i++) 
+    {
         if (arr[i] < smallest) {
             secondSmallest = smallest;
             smallest = arr[i];
@@ -44,8 +33,7 @@ void find2ndSmallestAndLargest(int arr[], int n) {
 
 int main() {
 
-  srand(time(NULL));
-
+//   srand(time(NULL)); 
     int n;
     printf("Enter the number of elements: ");
     scanf("%d", &n);
@@ -57,7 +45,7 @@ int main() {
 
     int arr[n];
     for (int i = 0; i < n; i++) {
-        arr[i] = rand() % 100; // Generating random integers between 0 and 99
+        arr[i] = rand()%100;
     }
 
     printf("Array: ");
